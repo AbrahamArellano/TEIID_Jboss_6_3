@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.4.7.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2016-08-10T10:33:29.210004788"/>
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2016-05-25T20:16:49.601407627">
+	<meta name="created" content="00:00:00">
+	<meta name="changed" content="2016-05-25T20:15:43.845586999">
+</head>
+<body lang="en-US" dir="ltr">
+<p align="center"><font size="5" style="font-size: 18pt"><b>Data
+Virtualization (DV) 6.3 Quick Start Instructions</b></font></p>
+<ol>
+	<li/>
+<p>Installing Quickstart kit</p>
+</ol>
+<ul>
+	<ul>
+		<li/>
+<p>Open a terminal window</p>
+		<li/>
+<p>create an empty folder and 'cd' into this quickstart_home
+		folder</p>
+		<li/>
+<p>copy the Quick start kit into this folder</p>
+		<li/>
+<p>Unzip the the Quick start kit</p>
+		<li/>
+<p>the DV 6.3 installer.jar should exist in the root of this
+		folder.</p>
+	</ul>
+</ul>
+<ol start="2">
+	<li/>
+<p>run the setup_dv.sh (.bat) script to install and configure
+	the DV server. This will:</p>
+</ol>
+<ul>
+	<ul>
+		<li/>
+<p>install DV</p>
+		<li/>
+<p>start H2 database server</p>
+		<li/>
+<p>start server</p>
+		<li/>
+<p>configure and deploy quick start data sources (H2, web
+		service and csv file)</p>
+		<li/>
+<p>deploy example VDB, name portfolio 
+		</p>
+	</ul>
+</ul>
+<ol start="5">
+	<li/>
+<p>Notes on installation</p>
+</ol>
+<ul>
+	<ul>
+		<li/>
+<p>The common password for all users (admin, teiidUser,
+		dashboardAdmin): redhat1!</p>
+		<li/>
+<p>To change the password, the following files need to be
+		changed:</p>
+		<ul>
+			<ul>
+				<li/>
+<p>setup.conf</p>
+				<li/>
+<p>setup.conf.bat</p>
+			</ul>
+		</ul>
+	</ul>
+</ul>
+<ol start="6">
+	<li/>
+<p>Starting and Stopping Server</p>
+	<ol>
+		<li/>
+<p>To stop the server (and H2 database server), run
+		shutdown_server.sh (.bat)</p>
+		<li/>
+<p>To restart the server (and H2 database serve), run
+		start_server.sh (.bat).</p>
+	</ol>
+	<li/>
+<p>Test the vdb</p>
+</ol>
+<ul>
+	<ul>
+		<li/>
+<p>connect</p>
+		<ul>
+			<li/>
+<p>URL: jdbc:teiid:<a href="mailto:portfolio@mm">portfolio@mm</a>://localhost:31000</p>
+			<li/>
+<p>Username/Password: teiidUser / redhat1!</p>
+		</ul>
+		<li/>
+<p>Example queries (data source)</p>
+		<ul>
+			<li/>
+<p>(h2) select * from Accounts.Customer</p>
+			<li/>
+<p>(csv) select * from Stocks.StockPrices</p>
+			<li/>
+<p>(webservice) select * from
+			CustomerCredit.CustomersCreditView</p>
+			<li/>
+<p>(h2 &amp; csv) select * from Stocks.StockPrices</p>
+			<li/>
+<p>(h2 &amp; webservice) select * from
+			CustomerCreditInfo.CustomersCreditInfoView</p>
+		</ul>
+	</ul>
+</ul>
+<ol>
+	<li value="1"/>
+<p>Example Data</p>
+</ol>
+<ul>
+	<ul>
+		<li/>
+<p>H2 database</p>
+		<ul>
+			<li/>
+<p>Schema: Accounts 
+			</p>
+			<ul>
+				<li/>
+<p>Table: Customer (SSN, FirstName, LastName, etc.)</p>
+				<li/>
+<p>Table: Product (ID, Symbol, Company_Name)</p>
+			</ul>
+		</ul>
+		<li/>
+<p>CSV file</p>
+		<ul>
+			<li/>
+<p>Schema: MarketData</p>
+			<li/>
+<p>View: Stocks 
+			</p>
+			<ul>
+				<li/>
+<p>Table: StockPrices (symbol, price)</p>
+			</ul>
+		</ul>
+		<li/>
+<p>Web service</p>
+		<ul>
+			<li/>
+<p>Schema: CustomerCreditSource</p>
+			<li/>
+<p>View: CustomerCredit 
+			</p>
+			<ul>
+				<li/>
+<p>Table: CustomerCreditView (customernumber, creditlimit,
+				creditscore)</p>
+			</ul>
+		</ul>
+		<li/>
+<p>Views</p>
+		<ul>
+			<li/>
+<p>Stocks.Stock: List the stockPrice for each product</p>
+			<li/>
+<p>CustomerCreditInfo.CustomersCreditInfoView: List the
+			creditLimit and creditScore for each customer 
+			</p>
+		</ul>
+	</ul>
+</ul>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+<p><br/>
+<br/>
+
+</p>
+</body>
+</html>
