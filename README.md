@@ -3,7 +3,7 @@ Ready to use Jboss 6.3 server for TEIID development. Includes a H2 DB for free.
 
 
 
-1.-  Download the Quick-Start Kit.
+1.-  Download the Quick-Start Kit. (https://developers.redhat.com/download-manager/file/dv_quickstart-2.1.0-dist.zip)
 
 2.-  Unzip the Quick-Start kit.
 
